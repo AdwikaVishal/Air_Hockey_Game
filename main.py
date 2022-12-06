@@ -6,8 +6,9 @@ from ball import Ball
 pygame.init()
 pygame.mixer.init()
 
-pygame.mixer.music.load("bg music.mp3")
-trumpet = pygame.mixer.Sound('trumpet sound effect.wav')
+# Add direct file name if its in CWD else add full path
+pygame.mixer.music.load("assets/bg music.mp3")
+trumpet = pygame.mixer.Sound('assets/trumpet sound effect.wav')
 
 def random_color():
     return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
