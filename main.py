@@ -12,20 +12,16 @@ trumpet = pygame.mixer.Sound('assets/trumpet sound effect.wav')
 
 def random_color():
     return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-
-# Define some colors
 BLACK = (0,0,0)
 WHITE = (255,255,255)
 RED = (255,0,0)
 CYAN =(0,255,255)
 MAGENTA = (255,0,255)
 BLUE = (0,0,255)
- 
-# Open a new window
+
 size = (700, 650)
 screen = pygame.display.set_mode(size)
 
-# Setting the title of the window
 pygame.display.set_caption("Air Hockey")
  
 # Player paddles
@@ -45,12 +41,10 @@ ball.rect.y = 195
 #This will be a list that will contain all the sprites we intend to use in our game.
 all_sprites_list = pygame.sprite.Group()
  
-# Add the 2 paddles and the ball to the list of objects
 all_sprites_list.add(paddleA)
 all_sprites_list.add(paddleB)
 all_sprites_list.add(ball)
  
-# The loop will carry on until the user exits the game (e.g. clicks the close button).
 carryOn = True
  
 clock = pygame.time.Clock()
