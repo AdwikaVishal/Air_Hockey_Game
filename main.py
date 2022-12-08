@@ -6,10 +6,11 @@ from ball import Ball
 pygame.init()
 pygame.mixer.init()
 
-scoreFont = pygame.font.Font("assets/Qualy Bold.ttf", 60)
+# Fonts
 titleFont = pygame.font.Font("assets/Qualy Bold.ttf", 60)
 creditsFont = pygame.font.Font("assets/CocoGoose.ttf", 30)
 
+# SFX
 # Add direct file name if its in CWD else add full path
 pygame.mixer.music.load("assets/bg music.mp3")
 trumpet = pygame.mixer.Sound('assets/trumpet sound effect.wav')
@@ -37,12 +38,12 @@ paddleB = Paddle(MAGENTA, 10, 100)
 paddleB.rect.x = 670
 paddleB.rect.y = 200
  
- # Ball
+# Ball
 ball = Ball(WHITE,10,10)
 ball.rect.x = 345
 ball.rect.y = 195
  
-#This will be a list that will contain all the sprites we intend to use in our game.
+#This will be a list that will contain all the sprites we intend to use
 all_sprites_list = pygame.sprite.Group()
  
 all_sprites_list.add(paddleA)
@@ -56,6 +57,7 @@ clock = pygame.time.Clock()
 scoreA = 0
 scoreB = 0
 
+# Start playing the music
 pygame.mixer.music.play()
 
 # --- Functions for Confetti Effect of particles
@@ -178,20 +180,16 @@ while carryOn:
     text = titleFont.render("AIR HOCKEY", 1, WHITE)
     text_rect = text.get_rect(center=(355, 550))
     screen.blit(text, text_rect)
-    # credits = creditsFont.render("By Shantanu and Ridhima", 1, WHITE)
-    # credits_rect = credits.get_rect(center=(350, 610))
-    # screen.blit(credits, credits_rect)
 
     all_sprites_list.draw(screen) 
  
     #Display scores:
-    
-    text = scoreFont.render(str(scoreA), 1, WHITE)
+    text = titleFont.render(str(scoreA), 1, WHITE)
     screen.blit(text, (250,10))
-    text = scoreFont.render(str(scoreB), 1, WHITE)
+    text = titleFont.render(str(scoreB), 1, WHITE)
     screen.blit(text, (420,10))
 
-    # --- Update the screen with what we've drawn.
+    # --- Update the screen
     pygame.display.flip()
      
     # --- Limit to 60 frames per second.
