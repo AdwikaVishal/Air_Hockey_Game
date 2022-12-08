@@ -174,7 +174,6 @@ while carryOn:
     # First, clear the screen to black. 
     screen.fill(BLACK)
     
-    
     pygame.draw.line(screen, WHITE, [349, 0], [349, 500], 5)
     pygame.draw.line(screen, WHITE, [0,500], [700,500], 5)
     text = titleFont.render("AIR HOCKEY", 1, WHITE)
