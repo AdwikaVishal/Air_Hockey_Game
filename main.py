@@ -6,6 +6,10 @@ from ball import Ball
 pygame.init()
 pygame.mixer.init()
 
+scoreFont = pygame.font.Font("assets/Qualy Bold.ttf", 60)
+titleFont = pygame.font.Font("assets/Qualy Bold.ttf", 60)
+creditsFont = pygame.font.Font("assets/CocoGoose.ttf", 30)
+
 # Add direct file name if its in CWD else add full path
 pygame.mixer.music.load("assets/bg music.mp3")
 trumpet = pygame.mixer.Sound('assets/trumpet sound effect.wav')
@@ -19,10 +23,10 @@ CYAN =(0,255,255)
 MAGENTA = (255,0,255)
 BLUE = (0,0,255)
 
-size = (700, 650)
+size = (700, 600)
 screen = pygame.display.set_mode(size)
 
-pygame.display.set_caption("Air Hockey")
+pygame.display.set_caption("Air Hockey -- By Ridhima and Shantanu")
  
 # Player paddles
 paddleA = Paddle(CYAN, 10, 100)
@@ -121,6 +125,9 @@ while carryOn:
         for _ in range(150):
             screen.fill(BLACK)
             particles_generator()
+            text = titleFont.render("PLAYER 1 SCORES!", 1, WHITE)
+            text_rect = text.get_rect(center=(350, 300))
+            screen.blit(text, text_rect)
             clock.tick(60)
             pygame.display.flip()
         pygame.mixer.music.unpause()
@@ -139,6 +146,9 @@ while carryOn:
         for _ in range(150):
             screen.fill(BLACK)
             particles_generator()
+            text = titleFont.render("PLAYER 2 SCORES!", 1, WHITE)
+            text_rect = text.get_rect(center=(350, 300))
+            screen.blit(text, text_rect)
             clock.tick(60)
             pygame.display.flip()
         pygame.mixer.music.unpause()
@@ -162,19 +172,15 @@ while carryOn:
     # First, clear the screen to black. 
     screen.fill(BLACK)
     
-
-    scoreFont = pygame.font.Font("Qualy Bold.ttf", 60)
-    titleFont = pygame.font.Font("Qualy Bold.ttf", 60)
-    creditsFont = pygame.font.Font("CocoGoose.ttf", 30)
     
     pygame.draw.line(screen, WHITE, [349, 0], [349, 500], 5)
     pygame.draw.line(screen, WHITE, [0,500], [700,500], 5)
     text = titleFont.render("AIR HOCKEY", 1, WHITE)
-    text_rect = text.get_rect(center=(355, 560))
+    text_rect = text.get_rect(center=(355, 550))
     screen.blit(text, text_rect)
-    credits = creditsFont.render("By Shantanu and Ridhima", 1, WHITE)
-    credits_rect = credits.get_rect(center=(350, 610))
-    screen.blit(credits, credits_rect)
+    # credits = creditsFont.render("By Shantanu and Ridhima", 1, WHITE)
+    # credits_rect = credits.get_rect(center=(350, 610))
+    # screen.blit(credits, credits_rect)
 
     all_sprites_list.draw(screen) 
  
