@@ -106,13 +106,13 @@ while carryOn:
     # --- Moving the paddles when the use uses the arrow keys (player A) or "W/S" keys (player B) 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
-        paddleA.moveUp(8)
+        paddleA.moveUp(10)
     if keys[pygame.K_s]:
-        paddleA.moveDown(8)
+        paddleA.moveDown(10)
     if keys[pygame.K_UP]:
-        paddleB.moveUp(8)
+        paddleB.moveUp(10)
     if keys[pygame.K_DOWN]:
-        paddleB.moveDown(8)    
+        paddleB.moveDown(10)    
  
     # --- Game logic should go here
     all_sprites_list.update()
