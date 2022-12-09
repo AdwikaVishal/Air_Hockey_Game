@@ -27,7 +27,7 @@ BLUE = (0,0,255)
 size = (700, 600)
 screen = pygame.display.set_mode(size)
 
-pygame.display.set_caption("Air Hockey -- By Ridhima and Shantanu")
+pygame.display.set_caption("Air Hockey")
  
 # Player paddles
 paddleA = Paddle(CYAN, 10, 100)

@@ -15,7 +15,7 @@ class Ball(pygame.sprite.Sprite):
         self.image.set_colorkey(BLACK)
  
         # Draw the ball (a rectangle!)
-        pygame.draw.rect(self.image, color, [0, 0, width, height])
+        pygame.draw.rect(self.image, color, [0, 0, width, height], border_radius=20)
         
         self.velocity = [randint(4,8),randint(-8,8)]
         
