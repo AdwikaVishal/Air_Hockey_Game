@@ -2,6 +2,7 @@
 Air Hockey game made using the Python library PyGame.
 
 Assets:
+---
 
 Trumpet sound effect: https://pixabay.com/sound-effects/search/score/
 
