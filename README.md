@@ -5,11 +5,16 @@ Made by <a href="https://github.com/shxntanu">Shantanu</a> and <a href="https://
 
 # Clone Repository
 
-Install Git on your device. On the terminal run `$ git clone https://github.com/shxntanu/air-hockey-pygame.git`
+Install Git on your device. 
+
+On the terminal run `$ git clone https://github.com/shxntanu/air-hockey-pygame.git`
+
+Then, in the project directory, run `main.py` or in the terminal enter `$ python main.py` and the game should start!
+
+# Screenshots
 
 <img src="https://github.com/shxntanu/air-hockey-pygame/blob/main/assets/Screenshot%202023-03-31%20at%2011.46.48%20PM.png?raw=true" height=600px>
 <img src="https://github.com/shxntanu/air-hockey-pygame/blob/main/assets/Screenshot%202023-03-31%20at%2011.46.58%20PM.png?raw=true" height=600px>
-
 
 Assets:
 ---
