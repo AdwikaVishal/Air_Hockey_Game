@@ -3,9 +3,9 @@ Welcome to the Air Hockey Game repository built using PyGame! This project offer
 
 Made by <a href="https://github.com/shxntanu">Shantanu</a> and <a href="https://github.com/RidhimaSinare">Ridhima</a> as a mini project.
 
-# Clone Repository
+# Running the game
 
-Install Git on your device. 
+Install Git on your device and in the terminal, using pip, enter `$ pip install pygame` to install the **PyGame** library required to run the game.
 
 On the terminal run `$ git clone https://github.com/shxntanu/air-hockey-pygame.git`
 
