@@ -5,14 +5,22 @@ Made by <a href="https://github.com/shxntanu">Shantanu</a> and <a href="https://
 
 # Running the game
 
-Install Git on your device and in the terminal, using pip, enter `$ pip install pygame` to install the **PyGame** library required to run the game.
+Install Git on your device and in the terminal, using pip, enter 
+```
+pip install pygame
+``` 
+to install the **PyGame** library required to run the game.
 
 On the terminal run 
 ```
-$ git clone https://github.com/shxntanu/air-hockey-pygame.git
+git clone https://github.com/shxntanu/air-hockey-pygame.git
 ```
 
-Then, in the project directory, run `main.py` or in the terminal enter `$ python main.py` and the game should start!
+Then, in the project directory, run `main.py` or in the terminal enter 
+```
+python main.py
+```
+and the game should start!
 
 # Screenshots
 
