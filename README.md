@@ -1,4 +1,7 @@
 # Air Hockey using PyGame
+
+<img src="https://cdnb.artstation.com/p/assets/images/images/008/946/023/original/ryan-bargiel-mp-hp1.gif?1516240623" height=100px>
+
 Welcome to the Air Hockey Game repository built using PyGame! This project offers an exciting implementation of the classic air hockey game in Python, leveraging the PyGame library for smooth graphics and interactive gameplay.
 
 Made by <a href="https://github.com/shxntanu">Shantanu</a> and <a href="https://github.com/RidhimaSinare">Ridhima</a> as a mini project.
