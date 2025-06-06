@@ -1,6 +1,9 @@
 import pygame
-BLACK = (0,0,0)
- 
+
+BLACK = (0, 0, 0)
+SCREEN_HEIGHT = 500
+PADDLE_HEIGHT = 100
+
 class Paddle(pygame.sprite.Sprite):
     
     def __init__(self, color, width, height):
@@ -17,9 +20,10 @@ class Paddle(pygame.sprite.Sprite):
     def moveUp(self, pixels):
         self.rect.y -= pixels
         if self.rect.y < 0:
-          self.rect.y = 0
+            self.rect.y = 0
           
     def moveDown(self, pixels):
         self.rect.y += pixels
-        if self.rect.y > 400:
-          self.rect.y = 400
+        max_y = SCREEN_HEIGHT - PADDLE_HEIGHT
+        if self.rect.y > max_y:
+            self.rect.y = max_y
