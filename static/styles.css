@@ -1,0 +1,277 @@
+/* --- Global Variables for Theming & Consistency --- */
+:root {
+  /* Colors */
+  --color-brand-primary: #00bcd4; /* Cyan - Gesture */
+  --color-brand-primary-dark: #0097a7; /* Darker Cyan */
+  --color-brand-secondary: #e91e63; /* Pink - Keyboard */
+  --color-brand-secondary-dark: #c2185b; /* Darker Pink */
+
+  --color-background-darkest: #0a0a0a;
+  --color-background-dark: #121212;
+  --color-background-medium: #1e1e1e;
+  --color-background-light: #282828; /* For subtle highlights */
+
+  --color-text-light: #e0e0e0;
+  --color-text-lighter: #f5f5f5;
+  --color-text-muted: #a0a0a0;
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 60px;
+
+  /* Border Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 50px;
+
+  /* Shadows */
+  --shadow-level-1: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-level-2: 0 8px 25px rgba(0, 0, 0, 0.4);
+  --shadow-level-3: 0 15px 40px rgba(0, 0, 0, 0.6);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  /* Transitions */
+  --transition-ease: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Standard ease-out */
+  --transition-spring: 0.4s cubic-bezier(.17,.67,.83,.67); /* For a bouncy/springy feel */
+}
+
+/* --- Base Body Styles --- */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures it takes full height */
+  overflow: hidden; /* Prevents scrollbars from subtle animations */
+
+  /* Base background */
+  background-color: var(--color-background-darkest);
+  /* Primary background image for depth */
+  background-image: url('https://images.unsplash.com/photo-1541701494587-c113129564f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps image fixed on scroll if content overflowed */
+  background-blend-mode: overlay; /* Blends with background-color */
+  filter: brightness(0.8) contrast(1.2); /* Slightly darkens and enhances contrast */
+
+  color: var(--color-text-light);
+  font-family: 'Inter', 'Segoe UI', sans-serif; /* Modern, highly readable font */
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Container Styling (Elevated Card) --- */
+.container {
+  text-align: center;
+  padding: var(--space-xl);
+  background-color: var(--color-background-medium);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-level-3); /* Stronger initial shadow */
+  max-width: 90%;
+  width: 600px; /* Generous width */
+  position: relative;
+  overflow: hidden; /* Important for inner elements not to spill */
+
+  /* Glassmorphic border effect */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px); /* Blur behind the container itself */
+  -webkit-backdrop-filter: blur(8px);
+
+  transform: translateY(0);
+  opacity: 0;
+  animation: fadeInPop 0.8s var(--transition-ease) forwards;
+}
+
+/* --- Container Background Texture (Subtle Overlay) --- */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Subtle geometric pattern */
+  background-image: url('https://images.unsplash.com/photo-1579546314815-f269389f417f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05; /* Very subtle */
+  filter: grayscale(100%); /* Desaturate */
+  z-index: -1; /* Behind content */
+  border-radius: var(--radius-md);
+}
+
+/* --- Heading & Paragraph Styles --- */
+h1 {
+  font-size: 4.5em; /* Even larger for impact */
+  margin-bottom: var(--space-sm);
+  color: var(--color-heading);
+  letter-spacing: -0.05em; /* Tighter for a modern look */
+  line-height: 1.1;
+  text-shadow: 0 0 20px rgba(0, 188, 212, 0.2), 0 0 30px rgba(233, 30, 99, 0.2); /* Dual color glow */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-secondary)); /* Gradient text */
+  animation: textGlow 2s infinite alternate; /* Subtle breathing glow */
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-muted);
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Button Group Layout --- */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+/* --- Button Base Styles --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 35px; /* More generous padding */
+  text-decoration: none;
+  font-size: 1.4em; /* Larger button text */
+  font-weight: 600;
+  border-radius: var(--radius-full); /* Pill shape */
+  box-shadow: var(--shadow-level-1), var(--shadow-inner); /* Outer + Inner shadow */
+  border: none;
+  cursor: pointer;
+  position: relative; /* For pseudo-elements */
+  overflow: hidden; /* For hover effects */
+  isolation: isolate; /* Ensures z-index context for pseudo elements */
+
+  /* Smooth transitions for all properties */
+  transition: all var(--transition-ease);
+}
+
+/* --- Button Specific Theming --- */
+.gesture {
+  background: var(--color-brand-primary);
+  color: var(--color-gesture-text);
+}
+
+.keyboard {
+  background: var(--color-brand-secondary);
+  color: var(--color-keyboard-text);
+}
+
+/* --- Button Hover & Active States --- */
+.btn:hover {
+  transform: translateY(-5px) scale(1.02); /* More pronounced lift and scale */
+  box-shadow: var(--shadow-level-2), var(--shadow-inner); /* Stronger shadow on hover */
+  filter: brightness(1.1); /* Slightly brighter */
+}
+
+/* Active/Clicked state for a pressed feel */
+.btn:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: var(--shadow-level-1), inset 0 3px 8px rgba(0, 0, 0, 0.4); /* Stronger inner shadow */
+  filter: brightness(0.9); /* Slightly darker */
+  transition: all 0.1s ease-out; /* Quicker transition for active */
+}
+
+/* Focus state for accessibility (keyboard navigation) */
+.btn:focus-visible {
+  outline: 2px solid var(--color-brand-primary); /* Default focus outline */
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px rgba(0, 188, 212, 0.4); /* Glow effect for focus */
+}
+.keyboard:focus-visible { /* Specific focus glow for keyboard button */
+  outline: 2px solid var(--color-brand-secondary);
+  box-shadow: 0 0 0 6px rgba(233, 30, 99, 0.4);
+}
+
+
+/* --- Button Hover Overlay Effect (Subtle Wipe) --- */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Light overlay */
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: transform var(--transition-ease);
+  z-index: -1;
+}
+
+.btn:hover::before {
+  transform: translateX(0); /* Slide in on hover */
+}
+
+/* --- Keyframe Animations --- */
+@keyframes fadeInPop {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 10px rgba(0, 188, 212, 0.2), 0 0 20px rgba(233, 30, 99, 0.2); }
+  50% { text-shadow: 0 0 15px rgba(0, 188, 212, 0.4), 0 0 25px rgba(233, 30, 99, 0.4); }
+  100% { text-shadow: 0 0 10px rgba(0, 188, 212, 0.2), 0 0 20px rgba(233, 30, 99, 0.2); }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-lg);
+    width: 95%;
+  }
+  h1 {
+    font-size: 3.5em;
+  }
+  p {
+    font-size: 1.1em;
+  }
+  .btn {
+    font-size: 1.2em;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 2.8em;
+    letter-spacing: -0.03em;
+  }
+  p {
+    font-size: 1em;
+    max-width: 95%;
+  }
+  .btn-group {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: var(--space-sm);
+  }
+  .btn {
+    width: 100%; /* Full width for stacked buttons */
+    padding: 16px 20px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: var(--space-md);
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+}
